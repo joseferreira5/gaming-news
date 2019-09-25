@@ -4,7 +4,11 @@ const Schema = mongoose.Schema;
 
 const CommentSchema = new Schema({
   title: String,
-  body: String
+  body: String,
+  article: { 
+    type: Schema.Types.ObjectId,
+    ref: "Article" 
+  }
 });
 
 const Comment = mongoose.model("Comment", CommentSchema);

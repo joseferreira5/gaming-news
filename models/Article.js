@@ -15,9 +15,10 @@ const ArticleSchema = new Schema({
     type: String,
     required: true
   },
-  // `comment` is an object that stores a Comment id
-  // The ref property links the ObjectId to the Note model
-  // This allows us to populate the Article with an associated Note
+  isSaved: {
+    type: Boolean,
+    required: true
+  },
   comment: {
     type: Schema.Types.ObjectId,
     ref: "Comment"
